@@ -11,6 +11,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         case '/register':
             require_once './../app/views/auth/register.view.php';
             break;
+
+        case '/login':
+            require_once './../app/views/auth/login.view.php';
+            break;
     }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -22,6 +26,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         case '/otpverify':
             require_once './../app/controller/userController/otpverify.controller.php';
             break;
+
+        case '/login':
+              require_once './../app/controller/userController/login.controller.php';
+              break;
 
     }
 }
