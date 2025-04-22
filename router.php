@@ -15,6 +15,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         case '/login':
             require_once './../app/views/auth/login.view.php';
             break;
+
+        case '/logout':
+            require_once './../app/controller/userController/logout.controller.php';
+            break;
     }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
