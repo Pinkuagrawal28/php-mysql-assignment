@@ -1,5 +1,7 @@
 <?php
 
+require_once BASE_PATH . '/app/configs/session.php';
+
 $uri = parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH);
 
 if ($_SERVER['REQUEST_METHOD'] === 'GET') {
@@ -19,6 +21,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'GET') {
         case '/logout':
             require_once './../app/controller/userController/logout.controller.php';
             break;
+
+        case '/reset':
+              require_once './../app/views/auth/reset.view.php';
+              break;
+
+        case '/changepassword':
+                require_once './../app/controller/userController/changepassword.controller.php';
+                break;
     }
 }
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
@@ -35,5 +45,12 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
               require_once './../app/controller/userController/login.controller.php';
               break;
 
+        case '/sendresetlink':
+            require_once './../app/controller/userController/resetlink.controller.php';
+            break;
+
+        case '/resetpassword':
+          require_once './../app/controller/userController/resetpassword.controller.php';
+          break;
     }
 }
